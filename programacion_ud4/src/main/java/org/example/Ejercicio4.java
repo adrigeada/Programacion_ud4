@@ -1,9 +1,10 @@
 package org.example;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ejercicio4 {
+     static Scanner teclado = new Scanner(System.in);
+
     static void main() {
 
         System.out.println("Bienvenido al bar de Javier");
@@ -29,9 +30,14 @@ public class Ejercicio4 {
 
     }
 
+    /**
+     * @author
+     * @version
+     * Método para introducir ganancias diarias de un bar
+     * @return devuelve un vector con las ganancias de la semana
+     */
     public static double[] rellenarVector(){
 
-        Scanner teclado = new Scanner(System.in);
 
         double[] dia = new double[6];
         do {
@@ -57,6 +63,11 @@ public class Ejercicio4 {
      return dia;
     }
 
+    /**
+     * Metodo que calcula que día se han tenido mas ventas
+     * @param dia recibe el vector con las ventas en la semana
+     * @return el día que más ventas ha tenido en la semana de martes a domingo
+     */
     public static String masVentas (double[] dia){
 
         double[] copia = dia.clone();
