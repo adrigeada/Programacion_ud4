@@ -20,5 +20,13 @@ public class Ejercicio1 {
         return numero*numero*numero;
     }
 
+    public static boolean par (int numero){
+
+        if (numero % 2 == 0){
+            return true;
+        }else {
+            return false;
+        }
+    }
 
 }
