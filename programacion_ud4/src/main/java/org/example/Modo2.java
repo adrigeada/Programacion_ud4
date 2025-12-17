@@ -22,7 +22,7 @@ public class Modo2 {
         if (y<0 || x<0)
         return false;
         else {
-            System.out.println((y+x)*2);
+            //codigo
             return true;
         }
     }

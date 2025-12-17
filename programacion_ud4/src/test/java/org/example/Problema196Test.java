@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class Problema196Test {
 
     @Test
-    void checkCantidad() { 
+    void checkCantidad() {
         String[][] tabla = new String[9][9];
         for (int i = 0; i < tabla.length; i++) {
             for (int j = 0; j < tabla[i].length; j++) {
