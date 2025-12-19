@@ -19,7 +19,13 @@ public class Modo1 {
 
     public static void casoDePrueba() {
 
-        // TU CÓDIGO AQUÍ
+        int vector[] = new int[6];
+        for (int i = 0; i < vector.length; i++) {
+            vector[i] = teclado.nextInt();
+        }
+        int resultado = (vector[0] * vector[1]* vector[2]) - (vector[3]*vector[1]*2) - (vector[4]+vector[5]);
+        System.out.println(resultado);
+
 
     } // casoDePrueba
 }
