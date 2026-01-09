@@ -9,11 +9,12 @@ public class EjerciciosRecursividad {
 
         imprimir_menu();
         elegir_opcion();
+        System.out.println("");
         repetir();
 
     }
 
-    static void imprimir_menu(){
+    public static void imprimir_menu(){
 
         System.out.println("*** Batería de ejercicios sobre recursividad ***");
         System.out.println("Selecciona a continuación el modo que quieras ejecutar...");
@@ -27,7 +28,7 @@ public class EjerciciosRecursividad {
 
     }
 
-    static void elegir_opcion(){
+    public static void elegir_opcion(){
 
         char modo = teclado.next().charAt(0);
 
@@ -41,11 +42,21 @@ public class EjerciciosRecursividad {
                 break;
             case '3':
                 ej3(1234);
+                String frase = "Frase al reves";
+                char[] frase_char = frase.toCharArray();
+                ej3String(frase_char.length-1, frase_char);
+
                 break;
             case '4':
-                ej4(1020);
+                if (ej4(1020)){
+                    System.out.println("Binario");
+                }else {
+                    System.out.println("No binario");
+                }
+
                 break;
             case '5':
+                System.out.println(ej5(9));
 
                 break;
             case '6':
@@ -60,7 +71,7 @@ public class EjerciciosRecursividad {
 
     }
 
-    static void repetir (){
+    public static void repetir (){
         System.out.println("Elige una opción:");
         System.out.println("[M] - Volver al menú principal");
         System.out.println("[X] - Salir");
@@ -72,7 +83,7 @@ public class EjerciciosRecursividad {
         }
     }
 
-    static int ej1 (int n){
+    public static int ej1 (int n){
 
         if (n < 10){
             return 1 ;
@@ -84,7 +95,7 @@ public class EjerciciosRecursividad {
 
     }
 
-    static int ej2 (int base,int exponente){
+    public static int ej2 (int base,int exponente){
 
         if (exponente == 1){
             return base;
@@ -95,7 +106,7 @@ public class EjerciciosRecursividad {
 
     }
 
-    static void ej3 (int num){
+    public static void ej3 (int num){
 
         if (num < 10){
             System.out.println(num);
@@ -106,16 +117,46 @@ public class EjerciciosRecursividad {
 
     }
 
-    static void ej4 (int num){
+    public static void ej3String(int posicion, char[] frase){
 
-        if (num % 10 != 0 && num % 10 != 1){
-            System.out.println("No binario");
-        }else if (num > 10){
-            ej4(num/10);
+        if (posicion >= 0){
+            System.out.print(frase[posicion]);
+            ej3String(posicion-1,frase);
+        }
+    }
+
+    public static boolean ej4 (int num){
+
+        if (num >= 10){
+
+            if (num % 10 == 0 || num % 10 == 1){
+               return ej4(num/10);
+            }else{
+                return false;
+            }
+
+        } else {
+            if (num == 0 || num == 1) {
+                return true;
+            } else {
+                return false;
+            }
+
+
+        }
+    }
+
+    public static String ej5 (int num){
+
+        if (num <= 1){
+            return Integer.toString(num);
         }else {
-            System.out.println("Binario");
+            return ej5(num/2)+ num%2; //se concatena el resto
+
         }
 
     }
+
+
 
 }
