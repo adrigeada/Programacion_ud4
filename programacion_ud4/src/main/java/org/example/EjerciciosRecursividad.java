@@ -214,11 +214,11 @@ public class EjerciciosRecursividad {
     }
 
     public static String ej7 (int num, int limite){
-        int suma = sumaej7(num);
 
         if (num == 1){
             return (num)+ "+";
         }else if (num == limite){
+            int suma = sumaej7(num);
             return ej7(num-1,limite)+(num)+ "=" + (suma);
         }else {
             return ej7(num-1,limite)+(num)+ "+";
